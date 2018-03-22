@@ -1,0 +1,29 @@
+﻿@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+
+
+@{
+    ViewBag.Title = "Add new employee";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Thông tin nhân viên </h2>
+<form id="frmDetail" method="post" action="@Url.Action("AddEmployee")">
+    Enter ID:<input name="emp_id" />
+    <br />
+    Enter Name:<input name="emp_name"/>
+    <br />
+    Enter Address:<input name="emp_address" />
+    <br />
+    Enter Phone:<input name="emp_mobile" />
+    <br />
+    Enter Email:<input name="emp_email" />
+    <br/>
+    Enter join date:<input name="emp_joindate" type="date" />
+    <br />
+    Enter validate:<input name="emp_validate" type="date" />
+    <br />
+    <input type="submit" value="Submit" name="action" />
+    <input type="submit" value="Cancel" name="action" />
+</form>  
