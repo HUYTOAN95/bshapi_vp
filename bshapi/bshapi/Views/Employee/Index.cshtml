@@ -1,0 +1,72 @@
+﻿@using bshapi.Models;
+@model IEnumerable<bshapi.Models.Employee>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_joindate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_validedate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_joindate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_validedate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
